@@ -1,8 +1,10 @@
 import React from "react";
-import Header from "./Components/Header/Header";
+import Header from "./Components/Header/MainHeader";
 import MainHeader from "./Components/Header/MainHeader";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./Components/About";
+import Footer from "./Components/Footer/Footer";
+import Home from "./Components/home";
 
 function App() {
   return (
@@ -13,14 +15,14 @@ function App() {
           {/* Home route */}
           <Route
             path="/"
-            element={<h1 className="p-6 text-3xl font-bold">Home Page</h1>}
+            element={<h1 className="p-6 text-3xl font-bold">{<Home/>}</h1>}
           />
 
           {/* About route */}
           <Route path="/about" element={<About />} />
            <Route path="/contact" element={<About />} />
         </Routes>
-        {/* <Header/> */}
+        <Footer/>
       </div>
     </BrowserRouter>
   );
