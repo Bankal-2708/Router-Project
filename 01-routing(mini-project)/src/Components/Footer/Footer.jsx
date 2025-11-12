@@ -3,8 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { Facebook, Instagram, Github,Twitter } from "lucide-react";
 
 function Footer() {
-  const links = [
-    { id: 1, name: "Home", link: "/home" },
+  const items = [
+    { id: 1, name: "Home", link: "/" },
     { id: 2, name: "About", link: "/about" },
     { id: 3, name: "Contact", link: "/contact" },
   ];
@@ -39,9 +39,9 @@ function Footer() {
                 Resources
               </h2>
               <ul className="text-gray-500 font-medium space-y-2">
-                {links.map((link) => (
-                  <li className="hover:underline" key={link.id}>
-                    <NavLink to={link.link}>{link.name}</NavLink>
+                {items.map((item) => (
+                  <li className="hover:underline" key={item.id}>
+                    <NavLink to={item.link}>{item.name}</NavLink>
                   </li>
                 ))}
               </ul>
@@ -75,6 +75,7 @@ function Footer() {
           </div>
         </div>
       </div>
+
       <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
       <div className=" flex justify-between px-6 items-center  w-full h-full pb-6   ">
         <span className="text-sm text-gray-500 sm:text-center hover:underline">

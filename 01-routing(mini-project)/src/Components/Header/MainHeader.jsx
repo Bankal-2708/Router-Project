@@ -10,7 +10,7 @@ const navLinkClass = ({ isActive }) =>
        : "text-gray-700 hover:text-orange-700"
    }`;
 
-const links = [
+const items = [
   { id: 1, name: "Home", link: "/" },
   { id: 2, name: "About", link: "/about" },
   { id: 3, name: "Contact", link: "/contact" },
@@ -34,11 +34,11 @@ function MainHeader() {
             className="hidden justify-between items-center w-full md:flex md:w-auto md:order-0"
             id="mobile-menu-2"
           >
-            <ul className="flex items-center justify-between gap-2 font-medium mt-4 md:mt-0 lg:flex-row">
-              {links.map((link) => (
-                <li key={link.id}>
-                  <NavLink to={link.link} className={navLinkClass}>
-                    {link.name}
+            <ul className="flex items-center justify-between gap-2 font-medium mt-4 md:mt-0 md:flex-row">
+              {items.map((item) => (
+                <li key={item.id}>
+                  <NavLink to={item.link} className={navLinkClass}>
+                    {item.name}
                   </NavLink>
                 </li>
               ))}
