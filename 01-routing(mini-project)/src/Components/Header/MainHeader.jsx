@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 const navLinkClass = ({ isActive }) =>
   `block py-2 pr-4 pl-3 duration-200 border-b border-gray-100 
@@ -18,6 +18,9 @@ const items = [
 ];
 
 function MainHeader() {
+
+  const navigate=useNavigate();
+
   return (
     <header className="shadow  top-0">
       <nav className="bg-white border-gray-200 px-4 md:px-6 py-2.5">
@@ -34,7 +37,7 @@ function MainHeader() {
             className="hidden justify-between items-center w-full md:flex md:w-auto md:order-0"
             id="mobile-menu-2"
           >
-            <ul className="flex items-center justify-between gap-2 font-medium mt-4 md:mt-0 md:flex-row">
+            <ul className="flex items-center justify-between gap-4 font-medium mt-4 md:mt-0 md:flex-row">
               {items.map((item) => (
                 <li key={item.id}>
                   <NavLink to={item.link} className={navLinkClass}>
@@ -46,7 +49,9 @@ function MainHeader() {
           </div>
 
           <div className="border-gray-200 ">
-            <button className="bg-white py-1 px-3 rounded-md hover:border-blue-800 hover:text-red-700 ">
+            <button 
+            onClick={() => navigate("/login")}
+            className="bg-white py-1 px-3 rounded-md hover:border-blue-800 hover:text-red-700 ">
               Log in
             </button>
             <button className="bg-red-700 text-white px-3 py-1 rounded-md border hover:border-black hover:bg-white hover:text-red-700 transition">
